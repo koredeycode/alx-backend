@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Hypermedia pagination documentation
+"""
 import csv
 import math
 from typing import List, Tuple, Mapping

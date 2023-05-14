@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Module documentation for the second task
+"""
 import csv
 from typing import List, Tuple
 
