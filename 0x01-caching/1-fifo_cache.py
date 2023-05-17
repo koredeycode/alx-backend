@@ -3,12 +3,20 @@
 Module documentation
 """
 from base_caching import BaseCaching
+from collections import OrderedDict
 
 
-class BasicCache(BaseCaching):
+class FIFOCache(BaseCaching):
     """
     inherits from BaseCaching. A caching system
     """
+    def __init__(self):
+        """
+        initialization
+        """
+        super().__init__()
+        self.cache_data = OrderedDict()
+
     def put(self, key, item):
         """
         assign to the dictionary
@@ -16,6 +24,9 @@ class BasicCache(BaseCaching):
         if key is None or item is None:
             return
         self.cache_data[key] = item
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            k, v = self.cache_data.popitem(False)
+            print("DISCARD: {}".format(k))
 
     def get(self, key):
         """
