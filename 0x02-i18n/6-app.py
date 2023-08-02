@@ -79,6 +79,8 @@ def get_locale() -> str:
 @app.route("/")
 def index() -> str:
     """
+    the index page -- for the route "/"
+    returns the template string of the html provided
     the index page
     """
     return render_template("6-index.html",
