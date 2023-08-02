@@ -31,8 +31,8 @@ def get_locale() -> str:
 @app.route("/")
 def index() -> str:
     """
-    the index page
-     -- for the route "/"
+    the index page -- for the route "/"
+    returns the template string of the html provided
     """
     return render_template("3-index.html",
                            ht=_("home_title"), hh=_("home_header"))
