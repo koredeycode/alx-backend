@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The main flask application file
+The main flask application file with the basic setup and babel
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
@@ -8,7 +8,8 @@ from flask_babel import Babel, _
 
 class Config:
     """
-    Represent a Flask babel configuration
+    Represent a Flask babel configuration contains
+    configuration need for flask babel.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
