@@ -32,6 +32,7 @@ def get_locale() -> str:
 def index() -> str:
     """
     the index page
+     -- for the route "/"
     """
     return render_template("3-index.html",
                            ht=_("home_title"), hh=_("home_header"))
