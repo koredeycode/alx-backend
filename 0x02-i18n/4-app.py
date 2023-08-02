@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 The main flask application file with the basic setup and babel
+with internalization support
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
@@ -35,7 +36,7 @@ def get_locale() -> str:
 @app.route("/")
 def index() -> str:
     """
-    the index page -- for the route "/"
+    the index page -- for the route '/'
     returns the template string of the html provided
     the index page
     """
