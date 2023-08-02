@@ -3,7 +3,7 @@
 The main flask application file
 """
 from flask import Flask, render_template, request, g
-from flask_babel import Babel, _
+from flask_babel import Babel
 from typing import Union, Dict
 import pytz
 
@@ -98,8 +98,7 @@ def index() -> str:
     returns the template string of the html provided
     the index page
     """
-    return render_template("7-index.html",
-                           ht=_("home_title"), hh=_("home_header"))
+    return render_template("7-index.html")
 
 
 if __name__ == "__main__":

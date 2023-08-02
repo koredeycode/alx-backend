@@ -3,7 +3,7 @@
 The main flask application file
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -34,8 +34,7 @@ def index() -> str:
     the index page -- for the route "/"
     returns the template string of the html provided
     """
-    return render_template("3-index.html",
-                           ht=_("home_title"), hh=_("home_header"))
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":
