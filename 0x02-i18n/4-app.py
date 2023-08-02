@@ -4,7 +4,7 @@ The main flask application file with the basic setup and babel
 with internalization support
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -40,8 +40,7 @@ def index() -> str:
     returns the template string of the html provided
     the index page
     """
-    return render_template("4-index.html",
-                           ht=_("home_title"), hh=_("home_header"))
+    return render_template("4-index.html")
 
 
 if __name__ == "__main__":
