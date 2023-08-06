@@ -98,7 +98,8 @@ def index() -> str:
     returns the template string of the html provided
     the index page
     """
-    return render_template("7-index.html")
+    g.time = format_datetime()
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
