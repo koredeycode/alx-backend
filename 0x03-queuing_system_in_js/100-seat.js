@@ -4,8 +4,8 @@ import kue from 'kue';
 import express from 'express';
 
 const app = express();
-const client = redis.createClient({ name: 'reserve_seat' });
-const queue = kue.createQueue();
+const client = redis.createClient();
+const queue = kue.createQueue({ name: 'reserve_seat' });
 
 const numberOfSeats = 50;
 let reservationEnabled = true;
@@ -17,8 +17,6 @@ function reserveSeat(number) {
 function getCurrentAvailableSeats() {
   return promisify(client.get).bind(client)('available_seats');
 }
-
-reserveSeat(numberOfSeats);
 
 app.get('/available_seats', async (req, res) => {
   const numberOfAvailableSeats = await getCurrentAvailableSeats();
@@ -66,5 +64,6 @@ app.get('/process', (req, res) => {
 });
 
 app.listen(1245, () => {
+  reserveSeat(numberOfSeats);
   console.log('API available on localhost port 1245');
 });
